@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  redis:
+    image: 'redis:alpine'
+  fcprojectbot:
+    depends_on: [ redis ]
+    image: ${DOCKER_REGISTRY-}fcprojectbot
+    build:
+      context: .
+      dockerfile: FCProjectBot/Dockerfile
