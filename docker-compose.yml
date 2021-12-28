@@ -9,6 +9,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - PROJECTS_REDIS_HOST=redis
+      - PROJECTS_REDIS_PORT=6379
+    env_file:
+      - .env
   watchtower:
     image: containrrr/watchtower
     volumes:
