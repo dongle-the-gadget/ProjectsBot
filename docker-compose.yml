@@ -8,4 +8,4 @@ services:
     image: ${DOCKER_REGISTRY-}fcprojectbot
     build:
       context: .
-      dockerfile: FCProjectBot/Dockerfile
+      dockerfile: Dockerfile
