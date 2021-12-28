@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FCProjectBot": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
