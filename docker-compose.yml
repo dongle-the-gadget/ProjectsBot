@@ -5,7 +5,11 @@ services:
     image: 'redis:alpine'
   fcprojectbot:
     depends_on: [ redis ]
-    image: ${DOCKER_REGISTRY-}fcprojectbot
+    image: ghcr.io/dongle-the-gadget/projectsbot:master
     build:
       context: .
       dockerfile: Dockerfile
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      -/var/run/docker.sock:/var/run/docker.sock
