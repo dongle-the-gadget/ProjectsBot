@@ -18,4 +18,10 @@
 		<PackageReference Include="StackExchange.Redis" Version="2.2.88" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="config.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

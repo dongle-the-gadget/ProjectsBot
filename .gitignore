@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Redis data (Docker Compose)
+redisdata/*
+!redisdata/.gitkeep

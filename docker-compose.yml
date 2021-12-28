@@ -3,6 +3,10 @@ version: '3.4'
 services:
   redis:
     image: 'redis:alpine'
+    volumes:
+      - type: bind
+        source: ./redisdata
+        target: /data
   fcprojectbot:
     depends_on: [ redis ]
     image: ghcr.io/dongle-the-gadget/projectsbot:master
@@ -14,7 +18,11 @@ services:
       - PROJECTS_REDIS_PORT=6379
     env_file:
       - .env
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /app/build/config.json
   watchtower:
     image: containrrr/watchtower
     volumes:
-      -/var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
